@@ -14,3 +14,10 @@ def create():
         return redirect("/")
     else:
         return render_template("create.html")
+@app.route('/correction', methods=["GET","POST"])
+def correction():
+    if request.method =='POST':
+        add_tovar(request)
+        return redirect("/")
+    else:
+        return render_template("correction.html")
