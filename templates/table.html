@@ -24,7 +24,7 @@ tr:nth-child(even) {
 
 <h2>Список товаров</h2>
 <a href="/create">Создать</a>
-<a correction ="/correction">Внести изменения</a>
+
 <table>
   <tr>
     <th>ID</th>
@@ -34,7 +34,7 @@ tr:nth-child(even) {
   {% for member in goods2: %}
       <tr>
         <td>{{member.id}}</td>
-        <td>{{member.name}}</td>
+        <td>{{member.name}} <a href="/correction/{{member.id}}">Внести изменения</a></td>
         <td>{{member.q}}</td>
       </tr>
   {% endfor %}

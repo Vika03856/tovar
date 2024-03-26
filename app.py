@@ -1,5 +1,5 @@
 from flask import Flask, request,render_template,redirect
-from db import goods, add_tovar
+from db import goods, add_tovar, get_tovar_by_id, correc_tovar
 app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
@@ -14,10 +14,11 @@ def create():
         return redirect("/")
     else:
         return render_template("create.html")
-@app.route('/correction', methods=["GET","POST"])
-def correction():
+@app.route('/correction/<tovar_id>', methods=["GET","POST"])
+def correction(tovar_id):
     if request.method =='POST':
         add_tovar(request)
         return redirect("/")
     else:
-        return render_template("correction.html")
+        finded_tovar = get_tovar_by_id(tovar_id)
+        return render_template("correction.html", correct_tovar = finded_tovar)

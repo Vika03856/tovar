@@ -17,5 +17,10 @@ def correc_tovar(request):
         if i == goods['name']:
             goods.insert(goods['name'],i)
 
-   
+def get_tovar_by_id(tovar_id):
+    find_index = int(tovar_id)
+    for tovar in goods:
+        if find_index == tovar_id['id']:
+            return tovar
+
     print(goods)
