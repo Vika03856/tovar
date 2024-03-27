@@ -10,17 +10,23 @@ def add_tovar(request):
     goods.append(fresh_tovar)
     print(goods)
 
-def correc_tovar(request):
+def correct_tovar(request):
     print(goods)
+
     new_tovar = {'name': request.form["item"], 'q': request.form["q"], 'id': 4}
     for i in goods:
         if i == goods['name']:
             goods.insert(goods['name'],i)
 
+    print(goods)
+
+
 def get_tovar_by_id(tovar_id):
     find_index = int(tovar_id)
+    print(find_index)
     for tovar in goods:
-        if find_index == tovar_id['id']:
+        print(tovar["id"])
+        if find_index == tovar['id']:
             return tovar
 
     print(goods)

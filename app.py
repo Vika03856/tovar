@@ -1,5 +1,5 @@
 from flask import Flask, request,render_template,redirect
-from db import goods, add_tovar, get_tovar_by_id, correc_tovar
+from db import goods, add_tovar, get_tovar_by_id, correct_tovar
 app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
